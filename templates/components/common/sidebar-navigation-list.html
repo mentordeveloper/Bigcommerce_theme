@@ -1,0 +1,43 @@
+
+{{#if children}}
+
+
+<li class="listStyleNone">
+    <h5 class="sidebarBlock-heading ">
+        <a style="" class="anchorDecoration has-subMenu{{#if is_active}} activePage{{/if}}" href="#" data-collapsible="navPages-{{id}}">
+            {{name}}
+            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
+        </a>
+    </h5>
+
+
+    <ul style="margin-left: 15px;">
+
+        {{#each children}}
+        <li >
+            {{#if children}}
+
+            <ul class="navPage-childList" id="navPages-{{id}}">
+                {{#each children}}
+                <li class="navPage-childList-item">
+                    -- <a data-mas="hurray123" class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+                </li>
+                {{/each}}
+            </ul>
+            {{else}}
+            -- <a data-mas="hurray" class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+
+</li>
+{{else}}
+
+<li class="navList-item sidebarBlock-heading">
+    <h5 class="marginTopZero">
+        <a class="paddingLeftZero navList-action" href="{{url}}">{{name}}</a>
+    </h5>
+</li>
+
+{{/if}}
